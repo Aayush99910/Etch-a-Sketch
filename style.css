@@ -52,13 +52,14 @@ main .big-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 main .big-container .option-sketch-container {
   display: flex;
-  gap: 10px;
+  gap: 100px;
   margin-top: 20px;
-  height: 400px;
-  width: 700px;
+  height: 450px;
+  width: 800px;
 }
 main .big-container .option-sketch-container .option-container {
   flex: 0.5;
@@ -104,6 +105,20 @@ main .big-container .option-sketch-container .option-container .option #color:ho
 main .big-container .option-sketch-container .option-container .option button:active {
   opacity: 0.9;
 }
+main .big-container .option-sketch-container .option-container .grid-option div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .big-container .option-sketch-container .option-container .grid-option div p {
+  font-family: "Poor Story", cursive;
+  font-size: 20px;
+}
+main .big-container .option-sketch-container .option-container .grid-option .slider {
+  display: none;
+  width: 115px;
+}
 main .big-container .option-sketch-container .option-container .color-option {
   display: none;
   flex-direction: column;
@@ -122,9 +137,8 @@ main .big-container .option-sketch-container .option-container .color-option .co
   cursor: pointer;
 }
 main .big-container .option-sketch-container .paint-pad-container {
-  flex: 2;
-  height: 400px;
-  padding: 0.5rem;
+  height: 450px;
+  width: 450px;
   display: flex;
   justify-content: center;
 }
@@ -133,10 +147,11 @@ main .big-container .option-sketch-container .paint-pad-container .paint-pad {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(16, 2fr);
-  grid-template-rows: repeat(16, 2fr);
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
 }
 main .big-container .option-sketch-container .paint-pad-container .paint-pad .grid {
+  border: 1px solid black;
   height: 100%;
   width: 100%;
 }
