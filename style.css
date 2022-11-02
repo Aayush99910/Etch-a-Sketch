@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Megrim&family=Poor+Story&family=Roboto+Condensed&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,36 +11,13 @@
   width: auto;
 }
 
-.whitecolor {
-  background-color: white;
-}
-
-.yellowcolor {
-  background-color: yellow;
-}
-
-.redcolor {
-  background-color: red;
-}
-
-.pinkcolor {
-  background-color: pink;
-}
-
-.bluecolor {
-  background-color: blue;
-}
-
-.color {
-  background-color: black;
-}
-
 header {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(37, 36, 36);
 }
+
 header h1 {
   font-size: 60px;
   font-family: "Megrim", cursive;
@@ -54,6 +32,7 @@ main .big-container {
   align-items: center;
   margin-bottom: 20px;
 }
+
 main .big-container .option-sketch-container {
   display: flex;
   gap: 100px;
@@ -61,6 +40,7 @@ main .big-container .option-sketch-container {
   height: 450px;
   width: 800px;
 }
+
 main .big-container .option-sketch-container .option-container {
   flex: 0.5;
   display: flex;
@@ -68,21 +48,26 @@ main .big-container .option-sketch-container .option-container {
   padding: 0.5rem;
   gap: 10px;
 }
+
 main .big-container .option-sketch-container .option-container .option {
   display: flex;
   justify-content: center;
 }
+
 main .big-container .option-sketch-container .option-container .option #colorpicker {
   -webkit-appearance: none;
   width: 30px;
   height: 25px;
 }
+
 main .big-container .option-sketch-container .option-container .option #colorpicker::-webkit-color-swatch-wrapper {
   padding: 0;
 }
+
 main .big-container .option-sketch-container .option-container .option #colorpicker::-webkit-color-swatch {
   border: none;
 }
+
 main .big-container .option-sketch-container .option-container .option button {
   border-radius: 3px;
   width: 100%;
@@ -94,36 +79,43 @@ main .big-container .option-sketch-container .option-container .option button {
   font-size: 18px;
   font-family: "Roboto Condensed", sans-serif;
 }
+
 main .big-container .option-sketch-container .option-container .option button:hover {
   cursor: pointer;
 }
+
 main .big-container .option-sketch-container .option-container .option #eraser:hover,
 main .big-container .option-sketch-container .option-container .option #grid:hover,
 main .big-container .option-sketch-container .option-container .option #color:hover {
   color: black;
 }
+
 main .big-container .option-sketch-container .option-container .option button:active {
   opacity: 0.9;
 }
-main .big-container .option-sketch-container .option-container .grid-option div {
-  display: flex;
+
+main .big-container .option-sketch-container .option-container .grid-option {
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-main .big-container .option-sketch-container .option-container .grid-option div p {
+
+main .big-container .option-sketch-container .option-container .grid-option p {
   font-family: "Poor Story", cursive;
   font-size: 20px;
 }
-main .big-container .option-sketch-container .option-container .grid-option .slider {
-  display: none;
+
+main .big-container .option-sketch-container .option-container .slider {
   width: 115px;
 }
+
 main .big-container .option-sketch-container .option-container .color-option {
   display: none;
   flex-direction: column;
   gap: 3px;
 }
+
 main .big-container .option-sketch-container .option-container .color-option .co {
   padding: 3px;
   display: flex;
@@ -133,16 +125,19 @@ main .big-container .option-sketch-container .option-container .color-option .co
   font-size: 18px;
   font-family: "Poor Story", sans-serif;
 }
+
 main .big-container .option-sketch-container .option-container .color-option .co:hover {
   cursor: pointer;
 }
-main .big-container .option-sketch-container .paint-pad-container {
+
+main .big-container .paint-pad-container {
   height: 450px;
   width: 450px;
   display: flex;
   justify-content: center;
 }
-main .big-container .option-sketch-container .paint-pad-container .paint-pad {
+
+main .big-container .paint-pad-container .paint-pad {
   border: 1px solid black;
   height: 100%;
   width: 100%;
@@ -150,26 +145,32 @@ main .big-container .option-sketch-container .paint-pad-container .paint-pad {
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
 }
-main .big-container .option-sketch-container .paint-pad-container .paint-pad .grid {
+
+main .big-container .paint-pad-container .paint-pad .grid {
   border: 1px solid black;
   height: 100%;
   width: 100%;
 }
-main .big-container .option-sketch-container .paint-pad-container .paint-pad .grid:hover {
+
+main .big-container .paint-pad-container .paint-pad .grid:hover {
   cursor: pointer;
 }
+
 main .details-container {
   padding: 1rem;
   display: flex;
   gap: 10px;
 }
+
 main .details-container p {
   font-family: "Comic Neue", cursive, sans-serif;
   font-size: 20px;
 }
+
 main .details-container .details {
   flex: 2;
 }
+
 main .details-container .logo {
   display: flex;
   flex-direction: column;
@@ -177,6 +178,7 @@ main .details-container .logo {
   align-items: center;
   flex: 1;
 }
+
 main .details-container .logo img {
   height: 40px;
   width: auto;
@@ -189,6 +191,7 @@ footer {
   align-items: center;
   height: 35px;
 }
+
 footer p {
   color: rgb(228, 228, 228);
   font-family: "Comic Neue";
