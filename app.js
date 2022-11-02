@@ -1,5 +1,4 @@
 // grabbing all the necessary elements from the document
-const grid = document.querySelectorAll(".grid");
 const colors = document.querySelectorAll(".co");
 const eraserBtn = document.querySelector("#eraser");
 const colorBtn = document.querySelector("#color");
@@ -14,24 +13,27 @@ let eraserOn = false; // checks if the erase is toggled
 let newColor; // assigns newcolor to the brush
 let mouseDown = false; // checks if the mouse is down or not
 
-
-const gridArray = Array.from(grid); // converting NODELIST into an array
-// looping through the array
-gridArray.forEach(function (eachgrid) {
-    eachgrid.addEventListener("mouseover", function () {
-        if (mouseDown === false) { 
-            return; // skips if the mouse is up
-        }else {
-            if (eraserOn === true) {
-                eachgrid.style.backgroundColor = whiteColor; // changes bg color to white if the erase is on
-            }else if (!newColor) {
-                eachgrid.style.backgroundColor = defaultColor; // if no color has been selected the default color acts on it
-            }else if (newColor) {
-                eachgrid.style.backgroundColor = newColor; // new color which the user selected
+function userDraw () {
+    const grid = document.querySelectorAll(".grid");
+    const gridArray = Array.from(grid); // converting NODELIST into an array
+    // looping through the array
+    gridArray.forEach(function (eachgrid) {
+        eachgrid.addEventListener("mouseover", function () {
+            if (mouseDown === false) { 
+                return; // skips if the mouse is up
+            }else {
+                if (eraserOn === true) {
+                    eachgrid.style.backgroundColor = whiteColor; // changes bg color to white if the erase is on
+                }else if (!newColor) {
+                    eachgrid.style.backgroundColor = defaultColor; // if no color has been selected the default color acts on it
+                }else if (newColor) {
+                    eachgrid.style.backgroundColor = newColor; // new color which the user selected
+                }
             }
-        }
-    })
-});
+        })
+    }); 
+}
+
 
 const colorsArray = Array.from(colors); // converting NODELIST to an array
 colorsArray.forEach(function (color) {
@@ -79,3 +81,39 @@ paintDiv.addEventListener("mousedown", () => {
 paintDiv.addEventListener("mouseup", () => {
     mouseDown = false;
 });
+
+
+const gridBtn = document.querySelector("#grid"); 
+const slider = document.querySelector(".slider");
+gridBtn.addEventListener("click", () => {
+    const spangrid = document.querySelector("#gd");
+    if (window.getComputedStyle(slider).display === "none") {
+        slider.style.display = "flex";
+        spangrid.style.color = defaultColor;
+    } else if (window.getComputedStyle(slider).display === "flex") {
+        slider.style.display = "none";
+        spangrid.style.color = whiteColor;
+    }
+});
+
+slider.addEventListener("mouseup", createGrid);
+
+function createGrid () {
+    const size = document.querySelector("#size");
+    const divNum = slider.value;
+    const divThatShouldBeCreated = Number(divNum) * Number(divNum);
+    size.textContent = `${divNum} X ${divNum}`;
+    
+    const gridContainer = document.querySelector(".paint-pad");
+    gridContainer.innerHTML = " ";
+    gridContainer.style.gridTemplateColumns = `repeat(${divNum}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${divNum}, 1fr)`;
+            
+    for (let i = 0; i < divThatShouldBeCreated; i++) {
+        const div = document.createElement('div');
+        div.classList.add("grid");
+        gridContainer.appendChild(div);
+    }     
+
+    userDraw();
+}
